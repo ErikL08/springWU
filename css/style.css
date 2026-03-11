@@ -2,26 +2,32 @@ body {
     margin: 0;
     background-color: wheat;
 }
+
 .wrapper {
     display: grid;
-    grid-template-areas: 
-    "hd"
-    "nv"
-    "mn"
-    "ft";
+    grid-template-areas:
+        "hd"
+        "nv"
+        "mn"
+        "ft";
     grid-template: 10vh 8vh 74vh 8vh / 1fr;
 }
 
 .menu {
-    height: 40vh;
-    width: 20vw;
-    background-color: white;
+    height: 100vh;
+    width: 25vw;
+    background-color: wheat;
     position: fixed;
     top: 0;
     left: -30vw;
     transition: left 0.3s;
     box-shadow: 10px 0px 21px -10px rgba(0, 0, 0, 0.75);
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: larger;
 }
 
 .menu-button {
@@ -47,11 +53,11 @@ body {
     display: block;
 }
 
-header{
+header {
     grid-area: "hd";
     display: grid;
-    grid-template-areas: 
-    "lo ru";
+    grid-template-areas:
+        "lo ru";
     grid-template: 10vh / 5vw 95vw;
     font-size: larger;
     border-bottom-style: solid;
@@ -70,7 +76,7 @@ header{
     display: flex;
     justify-content: center;
     position: absolute;
-    left: 44%;
+    left: 43%;
 }
 
 .lokal-nav {
@@ -95,4 +101,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
 }
