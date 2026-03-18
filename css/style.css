@@ -74,7 +74,7 @@ header {
 .rubrik {
     grid-area: "ru";
     display: flex;
-    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 43%;
 }
@@ -105,4 +105,17 @@ footer {
 
 a {
     text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .rubrik {
+        font-size: 1.5em;
+        left: 30%;
+
+    }
+
+    .menu-button {
+        font-size: 1em;
+        justify-content: left;
+    }
 }
