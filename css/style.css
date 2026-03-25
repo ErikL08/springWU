@@ -119,3 +119,18 @@ a {
         justify-content: left;
     }
 }
+
+.start_menu {
+    display: grid;
+    grid-template-areas: 
+    "se dv";
+    grid-template: 70vh / 50vw 50vw;
+}
+
+.start_section {
+    grid-area: "se";
+}
+
+.bilder {
+    grid-area: "dv";
+}
