@@ -5,6 +5,7 @@ body {
 
 .wrapper {
     display: grid;
+    height: 100vh;
     grid-template-areas:
         "hd"
         "nv"
@@ -54,8 +55,9 @@ body {
 }
 
 header {
-    grid-area: "hd";
+    grid-area: hd;
     display: grid;
+    height: 100%;
     grid-template-areas:
         "lo ru";
     grid-template: 10vh / 5vw 95vw;
@@ -65,14 +67,15 @@ header {
 }
 
 .menu-button {
-    grid-area: "lo";
+    grid-area: lo;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .rubrik {
-    grid-area: "ru";
+    grid-area: ru;
+    height: 100%;
     display: flex;
     align-items: center;
     position: absolute;
@@ -80,27 +83,32 @@ header {
 }
 
 .lokal-nav {
-    grid-area: "nv";
+    grid-area: nv;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-}
-
-main {
-    grid-area: "mn";
-    border-top-style: solid;
-    border-right-style: none;
     border-bottom-style: solid;
-    border-left-style: none;
     border-width: 2px;
 }
 
+.main {
+    grid-area: mn;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
 footer {
-    grid-area: "ft";
+    grid-area: ft;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top-style: solid;
+    border-width: 2px;
 }
 
 a {
@@ -118,19 +126,40 @@ a {
         font-size: 1em;
         justify-content: left;
     }
+    .bilder {
+        height: 0px;
+    }
 }
 
 .start_menu {
-    display: grid;
-    grid-template-areas: 
-    "se dv";
-    grid-template: 70vh / 50vw 50vw;
+    grid-area: mn;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.start_section {
-    grid-area: "se";
-}
+@media screen and (min-width: 900px) {
+    .start_menu {
+        display: grid;
+        height: 100%;
+        grid-template-areas: 
+        "se dv";
+        grid-template: 100% / 50% 50%;
+    }
 
-.bilder {
-    grid-area: "dv";
+    .start_section {
+        grid-area: se;
+        height: 100%;
+    }
+
+    .bilder-section {
+        grid-area: dv;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .bilder {
+        height: 300px;
+    }
 }
