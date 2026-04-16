@@ -11,7 +11,8 @@ body {
         "nv"
         "mn"
         "ft";
-    grid-template: 10vh 8vh 74vh 8vh / 1fr;
+    grid-template-rows: 10vh 8vh 74vh 8vh;
+    grid-template-columns: 1fr;
 }
 
 .menu {
@@ -20,7 +21,7 @@ body {
     background-color: wheat;
     position: fixed;
     top: 0;
-    left: -30vw;
+    left: -25vw;
     transition: left 0.3s;
     box-shadow: 10px 0px 21px -10px rgba(0, 0, 0, 0.75);
     z-index: 10;
@@ -29,11 +30,6 @@ body {
     justify-content: space-evenly;
     align-items: center;
     font-size: larger;
-}
-
-.menu-button {
-    cursor: pointer;
-    display: inline;
 }
 
 .show {
@@ -57,10 +53,10 @@ body {
 header {
     grid-area: hd;
     display: grid;
-    height: 100%;
     grid-template-areas:
         "lo ru";
-    grid-template: 10vh / 5vw 95vw;
+    grid-template-rows: 10vh;
+    grid-template-columns: auto 1fr;
     font-size: larger;
     border-bottom-style: solid;
     border-width: 2px;
@@ -68,23 +64,22 @@ header {
 
 .menu-button {
     grid-area: lo;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rubrik {
+    grid-area: ru;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.rubrik {
-    grid-area: ru;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 43%;
-}
-
 .lokal-nav {
     grid-area: nv;
-    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -95,15 +90,12 @@ header {
 
 .main {
     grid-area: mn;
-    height: 100%;
     overflow: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
 }
 
 footer {
     grid-area: ft;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,33 +110,32 @@ a {
 @media screen and (max-width: 768px) {
     .rubrik {
         font-size: 1.5em;
-        left: 30%;
-
     }
 
     .menu-button {
         font-size: 1em;
         justify-content: left;
     }
+
     .bilder {
-        height: 0px;
+        display: none;
     }
 }
 
-.start_menu {
+.start_main {
     grid-area: mn;
     overflow: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
 }
 
 @media screen and (min-width: 900px) {
-    .start_menu {
+    .start_main {
         display: grid;
         height: 100%;
         grid-template-areas: 
         "se dv";
-        grid-template: 100% / 50% 50%;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .start_section {
