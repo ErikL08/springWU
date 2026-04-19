@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: wheat;
+    background-color: #f5deb3;
 }
 
 .wrapper {
@@ -54,16 +54,29 @@ header {
     grid-area: hd;
     display: grid;
     grid-template-areas:
-        "lo ru";
+        "me ru lo";
     grid-template-rows: 10vh;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 5vw 1fr 5vw;
     font-size: larger;
     border-bottom-style: solid;
     border-width: 2px;
 }
 
-.menu-button {
+.loga {
     grid-area: lo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loga_bild {
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.menu-button {
+    grid-area: me;
     padding-left: 10px;
     display: flex;
     align-items: center;
@@ -81,17 +94,11 @@ header {
 .lokal-nav {
     grid-area: nv;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     border-bottom-style: solid;
     border-width: 2px;
-}
-
-.main {
-    grid-area: mn;
-    overflow: auto;
-    scroll-behavior: smooth;
 }
 
 footer {
@@ -105,6 +112,11 @@ footer {
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
 }
 
 @media screen and (max-width: 768px) {
@@ -114,43 +126,68 @@ a {
 
     .menu-button {
         font-size: 1em;
-        justify-content: left;
+        justify-content: center;
     }
 
     .bilder {
         display: none;
     }
+
+    h1 {
+        font-size: smaller;
+    }
+    
+    .lokal-nav {
+        font-size: x-small;
+    }
+
+    i {
+        font-size: small;
+    }
 }
 
-.start_main {
+.main {
+    display: grid;
     grid-area: mn;
     overflow: auto;
     scroll-behavior: smooth;
 }
 
-@media screen and (min-width: 900px) {
-    .start_main {
-        display: grid;
+
+
+@media screen and (min-width: 800px) {
+    .main {
         height: 100%;
         grid-template-areas: 
         "se dv";
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 55vw 45vw;
     }
 
-    .start_section {
+    .section {
+        display: grid;
         grid-area: se;
         height: 100%;
+        justify-content: center;
+        padding: 10px;
     }
 
-    .bilder-section {
+    .bilder_section {
         grid-area: dv;
         display: flex;
         height: 100%;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .bilder {
         height: 300px;
+        width: 500px;
     }
+}
+
+h2{
+    justify-self: center;
 }
